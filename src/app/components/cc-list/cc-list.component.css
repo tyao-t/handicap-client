@@ -1,0 +1,103 @@
+.list {
+  text-align: left;
+  max-width: 750px;
+  margin: auto;
+}
+
+h4 {
+    color: purple;
+}
+
+a.badge-danger {
+    margin-left: 5px;
+    color: white;
+    background-color: red;
+}
+
+.act, .act:hover {
+    background-color: #00b0ff;
+    color: white;
+}
+
+#sname {
+    margin-bottom: 5px;
+}
+
+.btn-danger {
+    display: inline-block;
+    margin-right:10px;
+    background-color: #db0000;
+    border: none;
+}
+
+label {
+    display:inline-block;
+    margin-right: 3px;
+}
+
+.odds {
+    color: #FFBF00;
+}
+
+.pb {
+    margin-top: 0px;
+    display: flex;
+    justify-content: center;
+}
+
+#inputRisk {
+    width: 125px;
+    height: 35px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border: none;
+    background-color: #282828;
+    color: #42826D;
+}
+
+#inputRisk::placeholder {
+    color: #42826D;
+}
+
+#placeBet {
+    width: 125px;
+    height: 35px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    background-color: #989898;
+    color: #F0F0F0;
+    border: none;
+}
+
+#placeBet:focus {
+    outline: none;
+}
+
+#info {
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+#rinfo {
+    background-color: #F5F5F5;
+    height : 63px;
+    width: 250px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+p.bod:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#codds {
+    color: #42826D;
+}
+
+.cur {
+    background-color: #F5F5F5;
+}

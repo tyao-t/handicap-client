@@ -1,0 +1,9 @@
+<div class="container">
+    <h2>Your purchace history</h2>
+    <p *ngFor="let hist of history; let i = index">
+        {{hist.cst.name}}@{{hist.cst.odds}}, {{hist.contestName}}, ${{hist.riskAmount}},
+        <span id="w" *ngIf="wl[i]==='W'">{{wl[i]}} +${{(hist.cst.odds*hist.riskAmount).toFixed(2)}}</span>
+        <span id="l" *ngIf="wl[i]==='L'">{{wl[i]}} -${{hist.riskAmount.toFixed(2)}}</span>
+        <span *ngIf="wl[i]==='In Progress'">{{wl[i]}}</span>
+    </p>
+<div>

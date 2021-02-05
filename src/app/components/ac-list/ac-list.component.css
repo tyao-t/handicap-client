@@ -1,0 +1,40 @@
+.list {
+  text-align: left;
+  max-width: 750px;
+  margin: auto;
+}
+
+h4 {
+    color: purple;
+}
+
+a.badge-danger {
+    margin-left: 5px;
+    color: white;
+    background-color: red;
+}
+
+.act, .act:hover {
+    background-color: #00b0ff;
+    color: white;
+}
+
+#sname {
+    margin-bottom: 5px;
+}
+
+.btn-danger {
+    display: inline-block;
+    margin-right:10px;
+    background-color: #db0000;
+    border: none;
+}
+
+label {
+    display:inline-block;
+    margin-right: 3px;
+}
+
+#odds {
+    color: purple;
+}

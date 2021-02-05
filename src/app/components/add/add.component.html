@@ -1,0 +1,28 @@
+<div class="container">
+  <br/>
+  <div class="submit-form">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          required
+          [(ngModel)]="name"
+          name="name"
+        />
+      </div>
+          <div class="item" *ngFor = "let cst of csts">
+              <p display="inline-block">{{cst.name}} </p>
+              <p class="odds">{{cst.odds}}</p>
+          </div>
+      <form class="item">
+        <input type="text" name="newCst" placeholder="New Contestant"
+        required
+        [(ngModel)]="curCst" autocomplete="off">
+        <button type="submit" (click)=addContestant()>+</button>
+      </form>
+      <br/>
+      <button (click)="saveContest()" class="btn btn-success">Submit</button>
+  </div>
+</div>

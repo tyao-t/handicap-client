@@ -1,0 +1,56 @@
+<div class = "list row">
+<div class="col-md-6">
+  <div *ngIf="currentContest">
+    <h4>Contest</h4>
+    <div>
+      <label><strong>Name:</strong></label> {{ currentContest.name }}
+    </div>
+    <div>
+      <label><strong>Contestants:</strong></label>
+      <ul>
+          <li *ngFor="let cst of currentContest.csts; let i = index">
+              <p>
+                  {{cst.name}} <span id="odds">{{cst.odds}}</span>
+              </p>
+              <a id="del" (click)="deleteCst(i)">
+                [Delete]
+              </a>
+          </li>
+      </ul>
+      <form class="item">
+        <input type="text" id="newCst" name="newContestant" placeholder="New Contestant"
+        required
+        [(ngModel)]="newCst" autocomplete="off">
+        <button type="submit" (click)=addContestant()>Add</button>
+      </form>
+      <br/>
+      <label><strong>Winners:</strong></label>
+      <ul>
+          <li *ngFor="let wnr of currentContest.wnrs; let i = index">
+              <p>
+                  {{wnr}}
+              </p>
+              <a id="del" (click)="deleteWnr(i)">
+                [Delete]
+              </a>
+          </li>
+      </ul>
+      <form class="item">
+        <input type="text" id="newWnr" name="newWnr" placeholder="New Winner"
+        required
+        [(ngModel)]="newWnr" autocomplete="off">
+        <button type="submit" (click)=addWnr()>Add</button>
+      </form>
+      <br/>
+      <p>Stop accepting bets: </p>
+      <input type="checkbox" [(ngModel)] = "currentContest.over" id="scb">
+    </div>
+    <button id= "save" (click)="updateContest()" class="btn btn-success">Save</button>
+  </div>
+
+  <div *ngIf="!currentContest">
+    <br />
+    <p>Cannot access contest...</p>
+  </div>
+</div>
+</div>

@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/telus-ehs-client",
+            "outputPath": "./static",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "telus-ehs-client"
+  "defaultProject": "telus-ehs-client",
+  "cli": {
+    "analytics": "998e564d-8896-4ee3-aa7f-fed21d5092ec"
+  }
 }

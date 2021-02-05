@@ -1,0 +1,47 @@
+.list {
+  text-align: left;
+  max-width: 750px;
+  margin: auto;
+}
+
+#save {
+    margin-top: 10px;
+}
+
+#new {
+    margin-right: 5px;
+}
+
+a.badge-danger {
+    margin-left: 5px;
+    color: white;
+    background-color: grey;
+}
+
+
+p {
+    display:inline-block;
+    margin-right: 3px;
+}
+
+#odds {
+    color: purple;
+}
+
+#del {
+    color: black
+}
+
+#del:hover {
+    color: red
+}
+
+a:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#scb {
+    margin-left: 5px;
+    transform: scale(1.2);
+}

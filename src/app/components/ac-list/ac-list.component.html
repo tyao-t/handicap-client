@@ -1,0 +1,72 @@
+<div class = "list row">
+<div class="col-md-6">
+      <div class="input-group mb-3">
+        <h4>Lines</h4>
+        <input
+          type="text"
+          id = "sname"
+          class="form-control"
+          placeholder="Search by name"
+          [(ngModel)]="sname"
+        />
+        <br/>
+      </div>
+      <pagination-controls
+          previousLabel="Prev"
+          nextLabel="Next"
+          (pageChange)="onTableDataChange($event)"
+         >
+        </pagination-controls>
+    <ul class="list-group">
+    <pagination-template #p="paginationApi">
+    <li
+        class="list-group-item pat"
+        *ngFor="let contest of contests | namePipe : sname | paginate : {
+                itemsPerPage: pageSize,
+                currentPage: (page > p.getLastPage() ? 1 : page)
+              }; let i = index"
+        (click)="setActiveContest(contest)"
+        [class.act] = "contest._id == currentContest._id"
+    >
+      {{ contest.name }}
+    </li>
+    </pagination-template>
+  </ul>
+  <button class="m-3 btn btn-sm btn-danger" (click)="removeAll()">
+    Remove All
+  </button>
+  <label for="ps">Entries per page: </label>
+  <select name="ps" id="ps" [(ngModel)]="pageSize">
+      <option>3</option>
+      <option selected="selected">5</option>
+      <option>10</option>
+  </select>
+</div>
+<div class="col-md-6">
+  <div *ngIf="currentContest._id !== '-1'">
+    <h4>Contest</h4>
+    <div>
+      <label><strong>Name:</strong></label> {{ currentContest.name }}
+    </div>
+    <div>
+      <label><strong>Contestants:</strong></label>
+        <ul>
+          <li *ngFor="let cst of csts">
+              <p>{{cst.name}} <span id="odds">{{cst.odds.toFixed(2)}}</span> </p>
+          </li>
+        </ul>
+        <p>{{ currentContest.over? "Stopped accepting bets." : "Accepting bets."}}</p>
+    </div>
+    <a class="badge badge-warning" routerLink="/admin/contests/{{ currentContest._id }}">
+      Manage Contestants
+    </a>
+    <a class="badge badge-danger" (click)="deleteCurContest()">
+      Delete
+    </a>
+  </div>
+  <div *ngIf="currentContest._id == '-1'">
+    <br />
+    <p>{{ contests.length == 0? "No contests available yet..." : "Please click on a contest..."}}</p>
+  </div>
+</div>
+</div>
