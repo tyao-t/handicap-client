@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<div class="container">
+
+<div class="row" id="box1">
+	<aside class="col-sm-4">
+<div class="card">
+<article class="card-body">
+<a href="" class="float-right btn btn-outline-primary" routerLink = '/log-in'>Goto login</a>
+<h4 class="card-title mb-4 mt-1">Signin to Handicap!</h4>
+	 <form class="form-signin" [formGroup]="signupForm" (ngSubmit)="registerUser()">
+    <div class="form-group">
+         	<label>Your name</label>
+            <input class="form-control" placeholder="Username" formControlName="username">
+    </div> <!-- form-group// -->
+    <div class="form-group">
+    	<label>Your email</label>
+        <input name="" class="form-control" placeholder="Email" formControlName="email" type="email">
+    </div> <!-- form-group// -->
+    <div class="form-group">
+    	<label>Your password</label>
+        <input class="form-control" placeholder="******" formControlName="password" type="password">
+    </div> <!-- form-group// -->
+    <div class="form-group">
+    <div class="checkbox">
+    </div> <!-- checkbox .// -->
+    </div> <!-- form-group// -->
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block">Sign up</button>
+    </div> <!-- form-group// -->
+</form>
+</article>
+</div> <!-- card.// -->
+
+	</aside> <!-- col.// -->
+</div> <!-- row.// -->
+
+</div>
+<!--container end.//-->

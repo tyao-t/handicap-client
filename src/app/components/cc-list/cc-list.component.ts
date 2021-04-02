@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, FormControl, Validators, FormArray} from '@angular/forms';
 import { GlobalConstants } from '../../common/global-constants'
+import { AuthService } from './../../shared/auth.service';
 
 @Component({
   selector: 'app-cc-list',
@@ -21,7 +22,7 @@ export class CcListComponent implements OnInit {
     curCst: any = undefined;
     rM: any;
 
-    constructor(private http: HttpClient, private router: Router) { }
+    constructor(private http: HttpClient, private router: Router, public authService: AuthService) { }
 
     ngOnInit(): void {
         this.retrieveContests();
@@ -64,7 +65,7 @@ export class CcListComponent implements OnInit {
             cst: this.curCst,
             riskAmount: this.rM
         }
-        this.http.post(GlobalConstants.apiURL+'history', data).subscribe(
+        this.http.post(GlobalConstants.apiURL+'history/'+this.authService.currentUserId(), data).subscribe(
             response => {
                 console.log(response);
                 this.router.navigate(['/history']);

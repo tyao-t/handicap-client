@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from './../../shared/auth.service';
+import { GlobalConstants } from '../../common/global-constants'
+
 
 @Component({
   selector: 'app-header',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(public authService: AuthService) { }
 
-  ngOnInit(): void {
+  logout(): void {
+     console.log("logging out");
+     this.authService.doLogout();
   }
-
+  ngOnInit(): void {
+      //console.log(this.authService.currentUser);
+  }
+  getCurrentUserName(): string {
+      return this.authService.currentUserName();
+  }
 }

@@ -1,12 +1,13 @@
 <nav class="navbar navbar-default">
     <div class="container">
       <div class="navbar-header">
-        <p class="navbar-brand">HANDICAP</p>
+        <p class="navbar-brand">HANDICAP$</p>
       </div>
-        <ul class="nav navbar-nav navbar-right">
+        <ul *ngIf="this.authService.isLoggedIn" class="nav navbar-nav navbar-right">
           <li id="home"><a routerLink="">Home</a></li>
           <li id="add-patient"><a routerLink="history">Purchase History</a></li>
-          <li id="about"><a routerLink="about">About</a></li>
+          <li id="welcome" *ngIf="this.authService.isLoggedIn"><a>Welcome, {{getCurrentUserName()}}!</a></li>
+          <button id="logout" (click)="logout()" type="button">Logout</button>
         </ul>
     </div>
 </nav>

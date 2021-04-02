@@ -4,10 +4,6 @@
   margin: auto;
 }
 
-h4 {
-    color: purple;
-}
-
 a.badge-danger {
     margin-left: 5px;
     color: white;
@@ -15,7 +11,7 @@ a.badge-danger {
 }
 
 .act, .act:hover {
-    background-color: #00b0ff;
+    background-color: #1abc9c;
     color: white;
 }
 
@@ -36,5 +32,5 @@ label {
 }
 
 #odds {
-    color: purple;
+    font-weight: bolder;
 }

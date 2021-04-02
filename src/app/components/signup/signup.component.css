@@ -1,0 +1,27 @@
+#box1 {
+    margin: 50px;
+}
+
+.btn-primary {
+    color: #1abc9c;
+    background-color: white;
+    border-color: #1abc9c;
+}
+
+.btn-primary:hover {
+    color: white;
+    background-color: #1abc9c;
+    border-color: white;
+}
+
+.btn-outline-primary {
+    color: grey;
+    background-color: white;
+    border: none;
+}
+
+.btn-outline-primary:hover {
+    color: white;
+    background-color: #1abc9c;
+    border: none;
+}

@@ -11,7 +11,13 @@
         />
         <br/>
       </div>
+      <style>
+          .my-pagination /deep/ .ngx-pagination .current {
+              background: #1abc9c;
+          }
+      </style>
       <pagination-controls
+          class="my-pagination"
           previousLabel="Prev"
           nextLabel="Next"
           (pageChange)="onTableDataChange($event)"
@@ -61,7 +67,6 @@
   </div>
 </div>
 </div>
-
 
 <div *ngIf="curCst" id="info">
     <form class="form-inline" id="rinfo">

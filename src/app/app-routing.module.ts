@@ -6,22 +6,20 @@ import { DetailComponent } from './components/detail/detail.component';
 import { ACListComponent} from './components/ac-list/ac-list.component';
 import { CcListComponent} from './components/cc-list/cc-list.component';
 import { HistoryComponent} from './components/history/history.component';
-import { LoginComponent } from './auth/containers/login/login.component';
-import { AuthGuard } from './auth/guards/auth.guard';
+import { SigninComponent } from './components/signin/signin.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { AuthGuard } from "./shared/auth.guard";
 
 const routes: Routes = [
-    { path: '', pathMatch: 'full', redirectTo: '/login' },
-    {
-      path: 'login',
-      component: LoginComponent,
-      canActivate: [AuthGuard]
-    },
+    { path: '', redirectTo: '/log-in', pathMatch: 'full' },
+    { path: 'log-in', component: SigninComponent },
+    { path: 'sign-up', component: SignupComponent },
     {path: 'about', component: AboutComponent},
     {path: 'admin/add', component: AddComponent},
     {path: 'admin/contests/:id', component: DetailComponent},
     {path: 'admin/contests', component: ACListComponent},
-    {path: '', component: CcListComponent},
-    {path: 'history', component: HistoryComponent}
+    {path: 'lines', component: CcListComponent, canActivate: [AuthGuard]},
+    {path: 'history', component: HistoryComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({
